@@ -59,20 +59,30 @@ public class MainFragment extends Fragment {
         };
 
         Observer<float[]> observerArray = new Observer<float[]>() {
+
+
             @Override
             public void onChanged(@Nullable final float[] floats) {
-                gravity1.setText("" + floats[0]);
-                gravity2.setText("" + floats[1]);
-                gravity3.setText("" + floats[2]);
+                String value0 = String.format("" + floats[0]).length() < 5 ? String.format("" + floats[0]) : String.format("" + floats[0]).substring(0, 5);
+                String value1 = String.format("" + floats[1]).length() < 5 ? String.format("" + floats[1]) : String.format("" + floats[1]).substring(0, 5);
+                String value2 = String.format("" + floats[2]).length() < 5 ? String.format("" + floats[2]) : String.format("" + floats[2]).substring(0, 5);
+
+                gravity1.setText(value0);
+                gravity2.setText(value1);
+                gravity3.setText(value2);
             }
         };
 
         Observer<float[]> magneticObserver = new Observer<float[]>() {
             @Override
             public void onChanged(@Nullable final float[] floats) {
-                field1.setText("" + floats[0]);
-                field2.setText("" + floats[1]);
-                field3.setText("" + floats[2]);
+                String value0 = String.format("" + floats[0]).length() < 5 ? String.format("" + floats[0]) : String.format("" + floats[0]).substring(0, 5);
+                String value1 = String.format("" + floats[1]).length() < 5 ? String.format("" + floats[1]) : String.format("" + floats[1]).substring(0, 5);
+                String value2 = String.format("" + floats[2]).length() < 5 ? String.format("" + floats[2]) : String.format("" + floats[2]).substring(0, 5);
+
+                field1.setText(value0);
+                field2.setText(value1);
+                field3.setText(value2);
             }
         };
 

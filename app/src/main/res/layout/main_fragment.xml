@@ -50,43 +50,202 @@
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_margin="20dp"
+        style="@style/Widget.MaterialComponents.CardView">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/gravityLogo"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/ic_tools"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="17dp"
+            android:layout_marginStart="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="Gotham"
+            android:text="Gravity"
+            android:textSize="30dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_toRightOf="@id/gravityLogo"
+            android:layout_marginStart="20dp"
+            android:layout_centerVertical="true" />
+        <GridLayout
+            android:layout_width="180dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:columnCount="3"
+            android:padding="10dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_gravity="fill"
+                android:layout_height="0dp"
+                android:textSize="20dp"
+                android:text="X"
+                android:fontFamily="Gotham"
+                android:textColor="@color/colorPrimaryDark"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_gravity="fill"
+                android:textSize="20dp"
+                android:text="Y"
+                android:fontFamily="Gotham"
+                android:textColor="@color/colorPrimaryDark"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:layout_columnWeight="1"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_gravity="fill"
+                android:textSize="20dp"
+                android:text="Z"
+                android:fontFamily="Gotham"
+                android:textColor="@color/colorPrimaryDark"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:layout_columnWeight="1"
+                />
 
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_gravity="fill"
+                android:layout_rowWeight="1"
+                android:id="@+id/gravityX"/>
+            <TextView
+                android:layout_height="0dp"
 
+                android:id="@+id/gravityY"
+                android:layout_width="0dp"
+                android:layout_gravity="fill"/>
+            <TextView
+                android:layout_height="0dp"
 
+                android:id="@+id/gravityZ"
+                android:layout_width="0dp"
+                android:layout_gravity="fill"/>
+        </GridLayout>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_margin="20dp"
+        style="@style/Widget.MaterialComponents.CardView">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/magneticLogo"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/ic_tools"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="17dp"
+                android:layout_marginStart="10dp"/>
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="Gotham"
+                android:text="Magnet Field"
+                android:textSize="30dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_toRightOf="@id/magneticLogo"
+                android:layout_marginStart="20dp"
+                android:layout_centerVertical="true" />
+            <GridLayout
+                android:layout_width="180dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:columnCount="3"
+                android:padding="10dp">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_gravity="fill"
+                    android:layout_height="0dp"
+                    android:textSize="20dp"
+                    android:text="X"
+                    android:fontFamily="Gotham"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_gravity="fill"
+                    android:textSize="20dp"
+                    android:text="Y"
+                    android:fontFamily="Gotham"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:layout_columnWeight="1"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_gravity="fill"
+                    android:textSize="20dp"
+                    android:text="Z"
+                    android:fontFamily="Gotham"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:layout_columnWeight="1"
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_gravity="fill"
+                    android:layout_rowWeight="1"
+                    android:id="@+id/fieldX"/>
+                <TextView
+                    android:layout_height="0dp"
+
+                    android:id="@+id/fieldY"
+                    android:layout_width="0dp"
+                    android:layout_gravity="fill"/>
+                <TextView
+                    android:layout_height="0dp"
+
+                    android:id="@+id/fieldZ"
+                    android:layout_width="0dp"
+                    android:layout_gravity="fill"/>
+            </GridLayout>
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
 
     //
     //Old code
     //
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="10dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Gravity (X, Y, Z): " />
-        <TextView
-            android:id="@+id/gravityX"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
-        <TextView
-            android:id="@+id/gravityY"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
-        <TextView
-            android:id="@+id/gravityZ"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
-    </LinearLayout>
 
-    <LinearLayout
+    <!--<LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -115,7 +274,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
-    </LinearLayout>
+    </LinearLayout>-->
 
 
 
