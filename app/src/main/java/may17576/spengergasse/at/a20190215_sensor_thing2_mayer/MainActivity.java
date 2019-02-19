@@ -16,10 +16,9 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView mTextMessage;
     private Fragment textFragment = new MainFragment();
     private Fragment compassFragment = new CompassFragment();
-    private Fragment temperatureFragment = new MainFragment();
+    private Fragment temperatureFragment = new TemperatureFragment();
     private Fragment activeFragment = textFragment;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -29,13 +28,16 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    activeFragment = new MainFragment();
+                    activeFragment = textFragment;
+                    getSupportActionBar().setTitle(R.string.title_home);
                     break;
                 case R.id.navigation_compass:
-                    activeFragment = new CompassFragment();
+                    activeFragment = compassFragment;
+                    getSupportActionBar().setTitle(R.string.title_compass);
                     break;
                 case R.id.navigation_temperature:
-                    activeFragment = new MainFragment();
+                    activeFragment = temperatureFragment;
+                    getSupportActionBar().setTitle(R.string.title_temperature);
                     break;
             }
 

@@ -53,29 +53,33 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="47dp"
         android:orientation="horizontal"
         android:padding="10px">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Magnetic field (X, Y, Z): " />
+
         <TextView
             android:id="@+id/fieldX"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
+
         <TextView
             android:id="@+id/fieldY"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
+
         <TextView
             android:id="@+id/fieldZ"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
     </LinearLayout>
 
 
