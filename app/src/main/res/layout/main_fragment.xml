@@ -7,28 +7,63 @@
     android:orientation="vertical">
 
 
-    <LinearLayout
+
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="10px">
-        <TextView
+        android:layout_height="80dp"
+        android:layout_margin="20dp"
+        style="@style/Widget.MaterialComponents.CardView">
+        
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Light value is: "
-            android:layout_weight="1"/>
-        <TextView
-            android:id="@+id/light"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
-    </LinearLayout>
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/lightLogo"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/ic_tools"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="17dp"
+                android:layout_marginStart="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="Gotham"
+                android:text="Light"
+                android:textSize="30dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_toRightOf="@id/lightLogo"
+                android:layout_marginStart="20dp"
+                android:layout_centerVertical="true" />
+            <TextView
+                android:id="@+id/light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30dp"
+                android:layout_marginEnd="20dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:fontFamily="Gotham"
+                android:textColor="@color/colorPrimaryDark" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+    //
+    //Old code
+    //
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="10px">
+        android:padding="10dp">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -53,9 +88,9 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="47dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="10px">
+        android:padding="10dp">
 
         <TextView
             android:layout_width="match_parent"
