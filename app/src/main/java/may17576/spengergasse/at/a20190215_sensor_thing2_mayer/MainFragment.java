@@ -86,6 +86,9 @@ public class MainFragment extends Fragment {
             }
         };
 
+
+
+
         mViewModel.getGravity().observe(this, observerArray);
         mViewModel.getLight().observe(this, observer);
         mViewModel.getField().observe(this, magneticObserver);

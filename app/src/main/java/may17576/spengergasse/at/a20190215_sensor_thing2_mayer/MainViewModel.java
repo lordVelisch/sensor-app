@@ -19,9 +19,15 @@ public class MainViewModel extends AndroidViewModel implements SensorEventListen
     private Sensor lightSensor;
     private Sensor gravitySensor;
     private Sensor magneticfieldSensor;
+    private Sensor rotationVectorSensor;
+    private float[] vectors;
+
+
     private MutableLiveData<Float> light;
     private MutableLiveData<float[]> gravity;
     private MutableLiveData<float[]> field;
+    private MutableLiveData<float[]> orientationVector;
+
 
     public MainViewModel(@NonNull Application application) {
         super(application);
@@ -29,9 +35,14 @@ public class MainViewModel extends AndroidViewModel implements SensorEventListen
         lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
         gravitySensor = sensorManager.getDefaultSensor(Sensor.TYPE_GRAVITY);
         magneticfieldSensor = sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
+        rotationVectorSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR);
+
+
         light = new MutableLiveData<>();
         gravity = new MutableLiveData<>();
         field = new MutableLiveData<>();
+        orientationVector = new MutableLiveData<>();
+        vectors = new float[3];
     }
 
     @Override
@@ -42,6 +53,9 @@ public class MainViewModel extends AndroidViewModel implements SensorEventListen
             gravity.setValue(event.values);
         } else if (event.sensor == magneticfieldSensor) {
             field.setValue(event.values);
+        } else if (event.sensor == rotationVectorSensor) {
+            SensorManager.getRotationMatrixFromVector(vectors, event.values);
+            orientationVector.setValue(vectors);
         }
     }
 
@@ -50,6 +64,10 @@ public class MainViewModel extends AndroidViewModel implements SensorEventListen
 
     public MutableLiveData<Float> getLight() {
         return light;
+    }
+
+    public MutableLiveData<float[]> getOrientationVector() {
+        return orientationVector;
     }
 
     public MutableLiveData<float[]> getGravity() {
@@ -64,9 +82,12 @@ public class MainViewModel extends AndroidViewModel implements SensorEventListen
         sensorManager.registerListener(this, lightSensor, SensorManager.SENSOR_DELAY_NORMAL);
         sensorManager.registerListener(this, gravitySensor, SensorManager.SENSOR_DELAY_NORMAL);
         sensorManager.registerListener(this, magneticfieldSensor, SensorManager.SENSOR_DELAY_NORMAL);
+        sensorManager.registerListener(this, rotationVectorSensor, SensorManager.SENSOR_DELAY_NORMAL);
+
     }
 
     public void pause() {
+        sensorManager.unregisterListener(this);
         sensorManager.unregisterListener(this);
         sensorManager.unregisterListener(this);
         sensorManager.unregisterListener(this);
