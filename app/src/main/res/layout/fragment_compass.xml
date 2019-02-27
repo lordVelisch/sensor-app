@@ -5,11 +5,26 @@
     android:layout_height="match_parent"
     tools:context=".CompassFragment">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/testID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
         <ImageView
             android:id="@+id/compass"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_below="@id/testID"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="201dp"
+            android:contentDescription="@string/compassimage"
             android:src="@drawable/ic_compass"
-            android:contentDescription="@string/compassimage"/>
+            android:scaleX="-1"
+            android:scaleY="-1"/>
+    </RelativeLayout>
 
 </FrameLayout>

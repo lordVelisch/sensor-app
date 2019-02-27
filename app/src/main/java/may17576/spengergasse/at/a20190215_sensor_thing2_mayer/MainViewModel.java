@@ -5,6 +5,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.util.Log;
 import android.view.Gravity;
 
 import androidx.annotation.NonNull;
@@ -20,7 +21,8 @@ public class MainViewModel extends AndroidViewModel implements SensorEventListen
     private Sensor gravitySensor;
     private Sensor magneticfieldSensor;
     private Sensor rotationVectorSensor;
-    private float[] vectors;
+    private float[] rotationMatrix;
+    private float[] orientationMatrix;
 
 
     private MutableLiveData<Float> light;
@@ -42,7 +44,8 @@ public class MainViewModel extends AndroidViewModel implements SensorEventListen
         gravity = new MutableLiveData<>();
         field = new MutableLiveData<>();
         orientationVector = new MutableLiveData<>();
-        vectors = new float[3];
+        rotationMatrix = new float[9];
+        orientationMatrix = new float[3];
     }
 
     @Override
@@ -54,8 +57,9 @@ public class MainViewModel extends AndroidViewModel implements SensorEventListen
         } else if (event.sensor == magneticfieldSensor) {
             field.setValue(event.values);
         } else if (event.sensor == rotationVectorSensor) {
-            SensorManager.getRotationMatrixFromVector(vectors, event.values);
-            orientationVector.setValue(vectors);
+            SensorManager.getRotationMatrixFromVector(rotationMatrix, event.values);
+            SensorManager.getOrientation(rotationMatrix, orientationMatrix);
+            orientationVector.setValue(orientationMatrix);
         }
     }
 
