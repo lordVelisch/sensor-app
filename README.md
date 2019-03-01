@@ -6,7 +6,9 @@ School Project for an App that has 3 Screens
 * Temperature Screen: Shows temperature values
 
 ## Looks
-
+![Screen1](http://www.vmayer.at/githubpics/sensor1.png)
+![Screen2](http://www.vmayer.at/githubpics/sensor2.png)
+![Screen3](http://www.vmayer.at/githubpics/sensor3.png)
 
 
 ## Built With
