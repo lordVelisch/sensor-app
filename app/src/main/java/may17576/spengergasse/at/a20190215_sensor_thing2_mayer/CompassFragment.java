@@ -80,6 +80,4 @@ public class CompassFragment extends Fragment {
         super.onPause();
         mainViewModel.pause();
     }
-
-
 }

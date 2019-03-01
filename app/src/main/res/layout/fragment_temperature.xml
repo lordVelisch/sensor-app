@@ -3,12 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".TemperatureFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <may17576.spengergasse.at.a20190215_sensor_thing2_mayer.Thermometer
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="TODO: Temperature Fragment" />
+        android:layout_height="wrap_content"
+        android:id="@+id/thermometer"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="80dp"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        app:innerColor="@color/innerColor"
+        app:middleColor="@color/middleColor"
+        app:outerColor="@color/outerColor"
+        app:radius="60dp" />
 
 </FrameLayout>
